@@ -27,6 +27,8 @@ spring:
     show-sql: false
     hibernate:
     ddl-auto: create
+    
+    spring.jpa.hibernate.naming-strategy=org.hibernate.cfg.DefaultNamingStrategy
    
     
   # Hibernate properties
