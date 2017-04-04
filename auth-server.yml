@@ -22,14 +22,7 @@ spring:
     password: password
     driver-class: com.mysql.jdbc.Driver
   
-  jpa:
-    database-platform: org.hibernate.dialect.MySQLDialect
-    
-     hibernate:
-       ddl-auto: create
-     
-       naming:
-         physical-strategy=org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+ 
    
         
    
