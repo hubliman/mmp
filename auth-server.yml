@@ -28,7 +28,6 @@ spring:
     hibernate:
       ddl-auto: create
       format_sql: true
-      
       naming:
         #implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl
         physical-strategy=org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy # Hibernate 5 physical naming strategy fully qualified name.
