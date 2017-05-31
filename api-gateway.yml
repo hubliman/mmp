@@ -4,9 +4,9 @@ server:
 
 # The OAuth2 server definition that would be used to send the authorization requests to
 authserver:
-    hostname: localhost
-    port: 8899
-    contextPath: userauth
+    hostname: 192.168.0.118
+    port: 8080
+    contextPath: uaa
     
 # Define the routes which determine what URL are serviced by what applications.
 # The application/services are defined in the bootstrap.yml file of individual applications
@@ -61,7 +61,7 @@ spring:
 # Datasource and JPA configuration to be used for using the same tokenstore as the authorization server for
 # the defined resource server. Note that there can't be 2 different root nodes, so datasource falls under the "spring" node.
   datasource:
-    url: jdbc:mysql://localhost:3306/auth
+    url: jdbc:mysql:// 192.168.0.118:3306/uaa
     username: root
     password: password
     driver-class: com.mysql.jdbc.Driver
@@ -87,9 +87,9 @@ eureka:
       
 # The OAuth2 server definition that would be used to send the authorization requests to
 authserver:
-    hostname: localhost
-    port: 8899
-    contextPath: userauth
+    hostname:  192.168.0.118
+    port: 8080
+    contextPath: uaa
     
 # Define the port where the API gateway server would be running. This could always be port 8080
 # since each docker container has it's own IP
