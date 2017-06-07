@@ -8,9 +8,9 @@ eureka:
       
 # The OAuth2 server definition that would be used to send the authorization requests to
 authserver:
-    hostname: localhost
-    port: 8899
-    contextPath: userauth
+    hostname: 192.168.0.118
+    port: 8080
+    contextPath: uaa
 
 # Note that the "/user" endpoint needs to provide the principle of the logged in user (/me endpoint)
 spring:
