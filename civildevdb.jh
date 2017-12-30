@@ -1,0 +1,117 @@
+
+
+entity countries{
+  sortname String required,
+  name String required,
+  phonecode Integer required
+}
+
+**
+ * The states entity.
+ */
+entity states (
+   name String required,
+  country_id  Integer required
+ } 
+entity cities (
+  name String required,
+  state_id  Integer required
+ } 
+
+entity company {
+	name String required
+ }
+
+entity vendor_type {
+   title String required
+    }
+
+entity vendor {
+  vendor_type_id Integer,
+  name String required,
+  address1  String required, 
+  address2 String,
+  address3 String,
+  city_id Integer,
+  state_id Integer,
+  country_id Integer,
+  pincode Integer,
+  contact_person Integer,
+  phone_office String,
+  mobile String,
+  email String,
+  designation String,
+  company_type String,
+  pan_no String,
+  gst_no String,
+  pf_registration_no String,
+  esic_registration_no String,
+  contact_labour_license_no String,
+  nature_of_services String,
+  bank_account_name String,
+  bank_name String,
+  bank_branch_name String,
+  bank_account_number String,
+  bank_account_currency String,
+  beneficiary_name String,
+  bank_swift_code String,
+  bank_ifsc_code String,
+  bank_branch_address String,
+  bank_city String,
+  bank_state String,
+  bank_pin String,
+  tds String,
+  low_conc_tds_ded_rate BigDecimal
+  
+}
+// an ignored comment
+/** not an ignored comment */
+entity fee_amt_limit {
+  vendor_id Integer,
+  max_fee_amt BigDecimal,
+   descriptioon String
+}
+
+entity vendor_fee_amt {
+  vendor_id Integer,
+  vendor_type_id Integer,
+  fee_amt BigDecimal,
+  other_fee_or_amt BigDecimal,
+  total_fee_amt BigDecimal,
+  mode_of_payment String,
+  comments String
+ }
+
+
+enum Language {
+    ENGLISH
+}
+
+relationship OneToMany {
+	country{state} to state,
+    state{city} to city,
+    vendor_type(vendor) to vendor,
+    country(vendor) to vendor,
+    state(vendor) to vendor,
+    city(vendor) to vendor,
+    vendor(fee_amt_limit) to fee_amt_limit,
+    vendor(vendor_fee_amt) to vendor_fee_amt,
+    vendor_type(vendor_fee_amt) to vendor_fee_amt,
+    
+    
+    
+    
+}
+
+
+// Set pagination options
+paginate country, state, city, vendor_type, vendor, vendor_fee_amt with infinite-scroll
+//paginate Job with pagination
+
+dto * with mapstruct
+
+// Set service options to all except few
+//service all with serviceImpl except Employee, Job
+service all with serviceImpl
+// Set an angular suffix
+//angularSuffix * with mySuffix
